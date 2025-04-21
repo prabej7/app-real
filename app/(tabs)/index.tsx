@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import { View } from '@/components/Themed';
+import { Categories, Head, Popular, Recommended } from '@/components/user/Page Component/Home';
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+      <Head />
+      <Categories />
+      <Popular />
+      <Recommended />
     </View>
   );
 }
@@ -16,8 +16,10 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+
+    width: "100%",
+    paddingHorizontal: 24,
+    paddingVertical: 48
   },
   title: {
     fontSize: 20,
